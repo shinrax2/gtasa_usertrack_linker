@@ -24,7 +24,7 @@ def getfiles(dirpath):
     f.sort(key=str.lower)
     return f
     
-def filerfiles(files):
+def filterfiles(files):
     filetypes = [".wav", ".ogg", ".mp3", ".wma"]
     newfiles = []
     for file in files:
@@ -43,7 +43,7 @@ for dir in dirs:
         musicdir = dir
         usertrackdir = os.path.join(os.path.join(os.environ["HOMEDRIVE"], os.environ["HOMEPATH"]), "Documents\GTA San Andreas User Files\\User Tracks")
         print("scanning "+dir)
-        files = filerfiles(getfiles(musicdir))
+        files = filterfiles(getfiles(musicdir))
         print("found {0} matching files".format(len(files)))
         print("creating .lnk files")
         counter = 1
